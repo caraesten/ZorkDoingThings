@@ -1,0 +1,15 @@
+<html>
+    <body>
+    <p>
+        {{content}}
+    </p>
+    <p>
+        <a href="{{url}}">{{url}}</a>
+    </p>
+    <form action="/postTweet" method="POST">
+        <input name="string_data" id="string_data" type="hidden" value="{{content}}">
+        <input name="url_data" id="url_data" type="hidden" value="{{url}}">
+        <button>Tweet It!</button>
+    </form>
+    </body>
+</html>
