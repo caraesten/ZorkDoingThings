@@ -10,6 +10,7 @@ import io.ktor.mustache.Mustache
 import io.ktor.mustache.MustacheContent
 import io.ktor.request.receiveParameters
 import io.ktor.response.respond
+import io.ktor.response.respondRedirect
 import io.ktor.routing.Routing
 import io.ktor.routing.get
 import io.ktor.routing.post
@@ -42,6 +43,7 @@ fun Application.main() {
                 url = GITHUB_BASE_URL + postParameters[PARAM_URL].orEmpty()
             )
             twitterClient.postTweet(zorkData)
+            call.respondRedirect("/")
         }
     }
 }
